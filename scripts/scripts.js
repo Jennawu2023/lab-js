@@ -10,7 +10,7 @@ You are encouraged to use the provided naming convention for ease of review.
 /* create variables to hold the values for modelName and duration */
 
 // INSERT YOUR CODE HERE
-let modelName = "" ;
+let modelName = "XYZ" ;
 let duration = 0 ;
 
 
@@ -31,10 +31,10 @@ function recalculate() {
     let costLabel = document.getElementById("calculated-cost");
     if (modelName === "XYZ")  {
         let cost = duration * 100;
-        costLabel.innerHTML = cost
+        costLabel.innerHTML = cost;
     } else if(modelName === "CPRG")  {
         let cost = duration * 213;
-        costLabel.innerHTML = cost
+        costLabel.innerHTML = cost;
     }
 }
 
@@ -56,9 +56,9 @@ function recalculate() {
     // modelButton.addEventListener("click", changeModel);
 
 // INSERT YOUR CODE HERE
-let switchModel = document.getElementById("model-button");
+let modelButton = document.getElementById("model-button");
 function changeModel() {
-    let modelText = document.getElementById("model-button");
+    let modelText = document.getElementById("model-text");
     if (modelName === "XYZ") {
         modelName = "CPRG";
         modelText.innerHTML = "Model CPRG";
@@ -66,7 +66,7 @@ function changeModel() {
         modelName = "XYZ";
         modelText.innerHTML = "Model XYZ";
     }
-    recalculate()
+    recalculate();
 }
 modelButton.addEventListener("click", changeModel);
 
@@ -89,10 +89,10 @@ modelButton.addEventListener("click", changeModel);
 let durationButton = document.getElementById("duration-button");
 function changeDuration() {
     let durationText = document.getElementById("duration-text");
-    let newDuration = prompt("Enter a new duration:");
+    let newDuration = Number(prompt("Enter a new duration:"));
     duration = newDuration;
     durationText.innerHTML = duration;
-    recalculate()
+    recalculate();
 }
 durationButton.addEventListener("click", changeDuration);
 
